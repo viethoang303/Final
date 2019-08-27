@@ -134,7 +134,7 @@ maincomponents.jacketpage=`
         justify-contents: flex-start;
         Font-size: 16px;">JACKET</span> 
     </div>
-    <div class = "items-container" id="item-container">  
+    <div class = "items-container" id="container">  
     </div>
 `
 maincomponents.shoespage = `
