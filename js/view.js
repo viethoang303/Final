@@ -271,6 +271,8 @@ view.showComponents = function (name) {
                 e.preventDefault();
                 let email = formbuy.email.value
                 let date = new Date().toISOString()
+                let mobile = formbuy.mobile.value
+                let address = formbuy.address.value
                 // for(let item of model.activeItems){
                 //     let index = model.activeItems.indexOf(item)
                 //     let quantity = document.getElementById('item+${}')
@@ -286,15 +288,16 @@ view.showComponents = function (name) {
                 //     i++;
                 // }
                 try {
-                    if (model.activeItems == [] || !validateEmail(email)) {
+                    if (model.activeItems == [] || !validateEmail(email) || !mobile || !address==null) {
                         throw new Error(`Please fill the all the information including email or produts`)
-                    } await controller.updateCarts(email, date);
+                    } await controller.updateCarts(email, date, mobile, address);
                     window.alert('Your purchase is succeed');
+                    model.removeActiveItems();
                 } catch (error) {
                     window.alert(error.message);
                 }
                 // await controller.updateCarts(email, date);
-                model.removeActiveItems();
+                // model.removeActiveItems();
             }
             interface.navBarHandler();
 

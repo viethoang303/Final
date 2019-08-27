@@ -33,7 +33,9 @@ const model = {
             quantity: null
         }],
         email: null,
-        date: null
+        date: null,
+        mobile: null,
+        address: null
     }]
 }
 console.log(">>", model.activeItems)
@@ -63,10 +65,12 @@ model.removeActiveItemsAtCartPage = function(index){
     items.splice(index, 1)
     localStorage.setItem('activeItems', JSON.stringify(model.activeItems))
 }
-model.updateCarts = function (items, email, date) {
+model.updateCarts = function (items, email, date, mobile, address) {
     model.cart[0].items = items;
     model.cart[0].email = email;
     model.cart[0].date = date;
+    model.cart[0].mobile = mobile;
+    model.cart[0].address = address;
     localStorage.setItem('cart', JSON.stringify(model.cart))
 }
 model.updateQuantity = function(product, quantity) {

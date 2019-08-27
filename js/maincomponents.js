@@ -37,7 +37,6 @@ maincomponents.field = `
 maincomponents.footer = `
     <div class = "footer-container">
         <div>Contact us</div>
-            <span>0387504432</span>
         <div>About us</div>
         <div>Get help</div>
     </div>

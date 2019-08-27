@@ -45,7 +45,7 @@ controller.loadItems = async function (items, type) {
 controller.addProduct = async function(item){
     model.updateActiveItems(item);
 }
-controller.updateCarts = async function(email, date){
+controller.updateCarts = async function(email, date, mobile, address){
     let items = model.activeItems;
     // console.log(model.activeItems)
     
@@ -55,7 +55,7 @@ controller.updateCarts = async function(email, date){
     // for(item of items){
     //     model.Carts.items.push(item);
     // }
-    model.updateCarts(items, email, date);
+    model.updateCarts(items, email, date, mobile, address);
     let cart = model.cart;
     controller.addMany('Carts', cart)
 }
